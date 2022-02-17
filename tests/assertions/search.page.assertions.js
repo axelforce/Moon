@@ -2,9 +2,9 @@ import AbstractAssertions from "../assertions/abstract.assertions";
 import { searchPage } from "../components/pages/search.page";
 
 class SearchPageAssertions extends AbstractAssertions {
-  async checkShoppingBucketIsDisplayed() {
+  async checkShoppingBasketIsDisplayed() {
     this.checkElementIsDisplayed(
-      await searchPage.isShoppingBucketDisplayed(),
+      await searchPage.isShoppingBasketDisplayed(),
       `Shopping Bucket should be displayed`
     )
   }
