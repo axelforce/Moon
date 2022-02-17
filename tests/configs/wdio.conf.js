@@ -1,4 +1,17 @@
+require('global-agent/bootstrap');
+
+const drivers = {
+    chrome: { version: '97.0.4692.71' }, // https://chromedriver.chromium.org/
+};
+
 exports.config = {
+    services: [
+        ['selenium-standalone', {
+            logPath: 'logs',
+            installArgs: { drivers },
+            args: { drivers },
+        }],
+    ],
     /** GENERAL */
     baseUrl: 'http://localhost:3000',
     specs: ['tests/specs/*.spec.js'],
