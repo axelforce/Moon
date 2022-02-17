@@ -5,7 +5,6 @@
     "to_the_moon": "wdio tests/configs/juice.shop/juice.shop.desktop.js"
   },
   "author": "Oleksandr Kulagin",
-  "license": "ISC",
   "dependencies": {
     "@babel/traverse": "^7.17.3",
     "@babel/types": "^7.17.0",
