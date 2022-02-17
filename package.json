@@ -1,0 +1,43 @@
+{
+  "name": "home_assignment",
+  "main": "index.js",
+  "scripts": {
+    "to_the_moon": "wdio tests/configs/juice.shop/juice.shop.desktop.js"
+
+  },
+  "author": "Oleksandr Kulagin",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/traverse": "^7.12.12",
+    "@babel/types": "^7.12.12",
+    "@wdio/cli": "^7.2.3",
+    "@wdio/selenium-standalone-service": "^7.0.4",
+    "chai": "^4.2.0",
+    "chai-almost": "^1.0.1",
+    "chai-integer": "^0.1.0",
+    "chai-things": "^0.2.0",
+    "cookie": "^0.4.1",
+    "form-data": "^4.0.0",
+    "lodash": "^4.17.15",
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "selenium-standalone": "^6.23.0",
+    "superagent": "^6.1.0",
+    "webdriver": "^7.3.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/register": "^7.13.8",
+    "@wdio/devtools-service": "^7.0.5",
+    "@wdio/local-runner": "^7.7.3",
+    "@wdio/mocha-framework": "^7.7.3",
+    "@wdio/spec-reporter": "^7.7.3",
+    "global-agent": "^2.2.0",
+    "superagent-proxy": "^2.1.0",
+    "superagent-retry-delay": "^2.6.2",
+    "webdriverio": "^7.0.5"
+  }
+}
