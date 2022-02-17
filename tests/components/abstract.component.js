@@ -59,7 +59,6 @@ export default class AbstractComponent {
   async waitScrollThanClick($element, timeInMilliseconds = 5 * 1000) {
     await $element.waitForExist({ timeout: timeInMilliseconds });
     await $element.scrollIntoView({ block: 'center' });
-    await browser.pause(500); // TODO investigate issue with click on elements after scrolling
     await $element.click();
   }
 
@@ -84,17 +83,6 @@ export default class AbstractComponent {
     return await $element.getText();
   }
 
-  async setNotInteractableInput($element, value, timeInMilliseconds = 10 * 1000) {
-    const fileUpload = await $element;
-    await browser.execute(
-      // assign style to elem in the browser
-      (el) => el.style.display = 'block',
-      // pass in element so we don't need to query it again in the browser
-      fileUpload,
-    );
-    await fileUpload.waitForExist({ timeout: timeInMilliseconds });
-  }
-
   async waitThanGetValue($element, timeInMilliseconds = 5 * 1000) {
     await $element.waitForDisplayed({ timeout: timeInMilliseconds });
     await $element.waitForClickable({ timeout: timeInMilliseconds });
@@ -114,22 +102,8 @@ export default class AbstractComponent {
     await $element.moveTo();
   }
 
-  async waitForPageIsFullScreenMode() {
-    await browser.waitUntil(
-      async function () {
-        return await browser.execute(function () {
-          return Boolean(document.fullscreenElement);
-        });
-      },
-      {
-        timeout: 7000,
-        timeoutMsg: 'Oops! Page is not in full screen mode',
-      },
-    );
-  }
-
   /** Is... */
-  async isElementDisplayed($element, timeInMilliseconds = 10 * 1000) {
+  async isElementDisplayed($element, timeInMilliseconds = 4 * 1000) {
     try {
       await $element.waitForDisplayed({ timeout: timeInMilliseconds });
       return true;
@@ -162,11 +136,6 @@ export default class AbstractComponent {
   }
 
   /** Close */
-  async clickCloseDialogButton() {
-    const closeButton = await $('mat-dialog-container [class*="icon-close"], [class*="icon-close"]');
-    await this.waitThanClick(await closeButton);
-  }
-
   async clickOnOverlay() {
     const overlay = await $('.cdk-overlay-container');
     await this.waitThanClick(await overlay);
@@ -175,35 +144,5 @@ export default class AbstractComponent {
   /** Get */
   async getPageTitle() {
     return browser.getTitle();
-  }
-
-  /** Application */
-  async appDoubleClick($element) {
-    await $element.doubleClick();
-  }
-
-  // multi action on an element
-  // drag&drop from position 200x200 down >= 200px on the screen
-  async appScrollDown(pixels = 200) {
-    await browser.touchAction([
-      { action: 'press', x: 200, y: 200 },
-      { action: 'moveTo', x: 200, y: 200 + pixels },
-      'release'
-    ])
-  }
-
-  async appTapOutside() {
-    await browser.touchAction([
-      { action: 'press', x: 200, y: 50 },
-    ])
-  }
-
-  async appMobileScrollDown() {
-    await browser.execute("mobile: scroll", { direction: 'down' });
-  }
-
-  async appWaitThanClick($element, timeInMilliseconds = 10 * 1000) {
-    await $element.waitForDisplayed({ timeout: timeInMilliseconds });
-    await $element.click();
-  }
+  };
 }

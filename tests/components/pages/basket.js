@@ -1,10 +1,12 @@
 import AbstractComponent from '../../components/abstract.component';
 
-class MainPage extends AbstractComponent {
+class BasketPage extends AbstractComponent {
   constructor() {
     super('');
   }
+  /** Selectors */
+
+  /** Methods */
 
 }
-
-export const mainPage = new MainPage();
+export const basketPage = new BasketPage();

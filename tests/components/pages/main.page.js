@@ -4,7 +4,9 @@ class MainPage extends AbstractComponent {
   constructor() {
     super('');
   }
+  /** Selectors */
+
+  /** Methods */
 
 }
-
 export const mainPage = new MainPage();

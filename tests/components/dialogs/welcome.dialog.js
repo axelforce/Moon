@@ -9,9 +9,17 @@ class WelcomeDialog extends AbstractComponent {
     return $('app-welcome-banner');
   }
 
+  get $dismissButton() {
+    return $('[aria-label = "Close Welcome Banner"]');
+  }
+
   /** Methods */
   async isWelcomeDialogDisplayed() {
     return await this.isElementDisplayed(await this.$welcomeDialog);
+  }
+
+  async clickDismissButton() {
+    await this.waitThanClick(await this.$dismissButton);
   }
 }
 
