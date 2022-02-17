@@ -15,6 +15,7 @@ describe('Login', async function () {
     await dialogsAssertions.checkConfirmRegistrationDialogIsDisplayed();
   })
   it(`User login ${priority.high}`, async function () {
+    //registration flow
     await loginDialog.open();
     await loginDialog.setEmail(userEmail);
     await loginDialog.setPassword(userPassword);

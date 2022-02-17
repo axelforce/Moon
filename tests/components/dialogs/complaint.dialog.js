@@ -1,10 +1,44 @@
 import AbstractComponent from '../../components/abstract.component';
 
-class MainPage extends AbstractComponent {
+const { testImagePath } = browser.config;
+
+class ComplaintDialog extends AbstractComponent {
   constructor() {
-    super('');
+    super('/#/complain');
+  }
+  /** Selectors */
+  get $messageField() {
+    return $('[id="complaintMessage"]');
   }
 
-}
+  get $submitButton() {
+    return $('[id="submitButton"]');
+  }
 
-export const mainPage = new MainPage();
+  get $fileInput() {
+    return $('input[id="file"]');
+  }
+
+  get $confirmationMessage() {
+    return $('[class="confirmation"]');
+  }
+
+  /** Methods */
+  async uploadFiles() {
+    const remoteFilePath = await browser.uploadFile(testImagePath);
+    await this.waitThanSetValue(await this.$fileInput, remoteFilePath);
+  }
+
+  async getComplaintConfirmationMessageText() {
+    return await this.waitThanGetText(await this.$confirmationMessage);
+  }
+
+  async clickSubmitButton() {
+    await this.waitThanClick(await this.$submitButton);
+  }
+
+  async setMessage(message) {
+    await this.waitThanSetValue(await this.$messageField, message);
+  }
+}
+export const complaintDialog = new ComplaintDialog();
