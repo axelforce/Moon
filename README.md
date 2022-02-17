@@ -34,8 +34,8 @@ To skip the specific test case in a suite add `skip` to case description, like t
 ### Run tests by priorities
 
 Examples:
-1. Run all tests with 'critical' priority' : `wdio tests/configs/juice.shop/juice.shop.desktop.js --mochaOpts.grep='#critical` OR `CASE_FILTER='#critical' wdio tests/configs/juice.shop/juice.shop.desktop.js`
-2. Run all tests with 'critical' and 'high' priority': `wdio tests/configs/juice.shop/juice.shop.desktop.js --mochaOpts.grep='#critical|#high` OR `CASE_FILTER='#critical|#high' wdio tests/configs/juice.shop/juice.shop.desktop.js`
+1. Run all tests with 'critical' priority' : `wdio tests/configs/juice.shop/juice.shop.desktop.js --mochaOpts.grep='#critical` 
+2. Run all tests with 'critical' and 'high' priority': `wdio tests/configs/juice.shop/juice.shop.desktop.js --mochaOpts.grep='#critical|#high`
 
 ### Folder Structure (e2e-web)
 
