@@ -13,7 +13,7 @@ exports.config = {
         }],
     ],
     /** GENERAL */
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'https://demo.owasp-juice.shop',
     specs: ['tests/specs/*.spec.js'],
     retries: 0,
     reporters: [

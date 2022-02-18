@@ -1,9 +1,9 @@
 const { config } = require('../wdio.conf');
 const capabilities = require('../wdio.capabilities');
 
-config.baseUrl = 'http://localhost:3000';
-config.apiUrl = 'http://localhost:3000/api';
-config.restUrl = 'http://localhost:3000/rest';
+config.baseUrl = 'https://demo.owasp-juice.shop';
+config.apiUrl = 'https://demo.owasp-juice.shop/api';
+config.restUrl = 'https://demo.owasp-juice.shop/rest';
 config.domain = 'localhost';
 config.resolution = 'desktop';
 config.language = 'en';
