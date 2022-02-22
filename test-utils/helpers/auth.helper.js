@@ -1,8 +1,6 @@
 import { apiHelper } from "./api.helper";
 
-const cookie = require('cookie');
-
-const { baseUrl, domain } = browser.config;
+const { baseUrl } = browser.config;
 
 class AuthHelper {
 
