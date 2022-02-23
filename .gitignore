@@ -4,3 +4,4 @@ package-lock.json
 
 # idea log files
 /.idea
+test-data/reports/html-reports/*

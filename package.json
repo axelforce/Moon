@@ -7,9 +7,9 @@
   "author": "Oleksandr Kulagin",
   "dependencies": {
     "@babel/traverse": "^7.17.3",
-    "@babel/types": "^7.17.0",
     "@wdio/cli": "^7.16.15",
     "@wdio/selenium-standalone-service": "^7.16.14",
+    "@wdio/types": "^7.8.0",
     "chai": "^4.3.6",
     "chai-almost": "^1.0.1",
     "chai-integer": "^0.1.0",
@@ -20,6 +20,7 @@
     "path": "^0.12.7",
     "selenium-standalone": "^6.24.0",
     "superagent": "^6.1.0",
+    "wdio-html-nice-reporter": "^7.9.1",
     "webdriver": "^7.3.1",
     "winston": "^3.6.0"
   },
