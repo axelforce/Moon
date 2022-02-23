@@ -21,7 +21,7 @@ exports.config = {
   retries: 0,
   reporters: ['spec',
     ["html-nice", {
-      outputDir: 'test-data/reports/html-reports',
+      outputDir: 'test-utils/reports/html-reports',
       filename: 'report.html',
       reportTitle: 'Test Report Title',
       linkScreenshots: true,
@@ -54,7 +54,7 @@ exports.config = {
   onPrepare: function (config, capabilities) {
 
     reportAggregator = new ReportAggregator({
-      outputDir: 'test-data/reports/html-reports',
+      outputDir: 'test-utils/reports/html-reports',
       filename: 'master-report.html',
       reportTitle: 'Master Report',
       browserName: 'chrome',
